@@ -173,7 +173,7 @@ def reply(replyToken, databack):
               {
                 "type": "text",
                 "text": "10:00 - 23:00",
-                "wrap": true,
+                "wrap": "true",
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
