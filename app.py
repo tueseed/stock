@@ -40,7 +40,8 @@ def getquote(symbol):
     percent_chg = h1_list[3].strip()
     stock_return = {"symbol": symbol, "lastupdate": last_update, "lastprice": last_price, "pricechange": price_chg,
                     "percentchange": percent_chg}
-    return json.dumps(stock_return)
+    # return json.dumps(stock_return)
+    return stock_return
 
 @app.route('/bot', methods=['POST'])
 def bot():
@@ -75,7 +76,7 @@ def reply(replyToken, databack):
     "contents": [
       {
         "type": "text",
-        "text": "Brown Cafe",
+        "text": databack["symbol"],
         "weight": "bold",
         "size": "xl"
       },
