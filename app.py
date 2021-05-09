@@ -42,7 +42,7 @@ def getquote(symbol):
                     "percentchange": percent_chg}
     return json.dumps(stock_return)
 
-@app.route('/bot')
+@app.route('/bot',method = 'POST')
 def bot():
     # ข้อความที่ต้องการส่งกลับ
     replyStack = list()
