@@ -42,7 +42,7 @@ def getquote(symbol):
                     "percentchange": percent_chg}
     return json.dumps(stock_return)
 
-@app.route('/bot', methods=['POST'])
+@app.route('/bot')
 def bot():
     # ข้อความที่ต้องการส่งกลับ
     replyStack = list()
@@ -60,7 +60,7 @@ def bot():
     replyStack.append(msg_in_string)
     reply(replyToken, txtre)
 
-    return 'OK', 200
+    return 200
 
 def reply(replyToken, textList):
     # Method สำหรับตอบกลับข้อความประเภท text กลับครับ เขียนแบบนี้เลยก็ได้ครับ
