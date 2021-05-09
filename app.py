@@ -80,21 +80,21 @@ def reply(replyToken, databack):
                                       "uri": "http://linecorp.com/"
                                     }
                     },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "Brown Cafe",
-        "weight": "bold",
-        "size": "xl"
-      },
-      {
-        "type": "box",
-        "layout": "baseline",
-        "margin": "md",
-        "contents": [
+            "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                                      {
+                                        "type": "text",
+                                        "text": "Brown Cafe",
+                                        "weight": "bold",
+                                        "size": "xl"
+                                      },
+                                      {
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "margin": "md",
+                                        "contents": [
           {
             "type": "icon",
             "size": "sm",
@@ -151,7 +151,7 @@ def reply(replyToken, databack):
               {
                 "type": "text",
                 "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
-                "wrap": true,
+                "wrap": "true",
                 "color": "#666666",
                 "size": "sm",
                 "flex": 5
