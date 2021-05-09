@@ -217,11 +217,11 @@ def reply(replyToken, databack):
     "flex": 0
   }
 }
-    flexMsg ={
+    flexMsg =[{
                 "type":"flex",
                 "altText":"test",
                 "contents":flex
-            }
+            }]
     data = json.dumps({"replyToken":replyToken,"messages":flexMsg})
     requests.post(LINE_API, headers=headers, data=data)
     return
