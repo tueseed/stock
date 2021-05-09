@@ -2,13 +2,12 @@ from flask import Flask,request
 import json
 from bs4 import BeautifulSoup
 import requests
-############################################################
+
 app = Flask(__name__)
-###########################หน้าแรก################################
 @app.route('/')
 def index():
     return "Hi Welcome to python page"
-#################################หน้าราคาหุ้น###############################
+
 @app.route('/getquote', methods=['GET'])
 def getquote():
     symbol_param = request.args.get("symbol")
@@ -25,7 +24,6 @@ def getquote():
     last_update = span_list[22]
     symbol = span_list[24]
 
-    ######หาราคาล่าสุดและการเปลี่ยนแปลง#####
     data_h1 = soup.find_all('h1')
     h1_list = []
     for data_h1s in data_h1:
