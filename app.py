@@ -54,32 +54,32 @@ def bot():
     # Token สำหรับตอบกลับ (จำเป็นต้องใช้ในการตอบกลับ)
         replyToken = msg_in_json["events"][0]['replyToken']
         symbol_from_line = msg_in_json["events"][0]['message']
-        # txtre = symbol_from_line['text']
-        databack = getquote(symbol_from_line['text'])
+        txtre = symbol_from_line['text']
+        databack = getquote(txtre)
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไป-มา (แบบ json)
     #     replyStack.append(msg_in_string)
         reply(replyToken, databack)
 
     return 'OK'
 
-def reply(replyToken, textList):
+def reply(replyToken, databack):
     # Method สำหรับตอบกลับข้อความประเภท text กลับครับ เขียนแบบนี้เลยก็ได้ครับ
     LINE_API = 'https://api.line.me/v2/bot/message/reply'
     headers = {'Content-Type': 'application/json; charset=UTF-8','Authorization': LINE_API_KEY}
     # msgs = [{"type":"text","text":str(textList)}]
     flex = {
-  "type": "bubble",
-  "hero": {
-    "type": "image",
-    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-    "size": "full",
-    "aspectRatio": "20:13",
-    "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "http://linecorp.com/"
-    }
-  },
+            "type": "bubble",
+            "hero": {
+                        "type": "image",
+                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                        "size": "full",
+                        "aspectRatio": "20:13",
+                        "aspectMode": "cover",
+                        "action": {
+                                      "type": "uri",
+                                      "uri": "http://linecorp.com/"
+                                    }
+                    },
   "body": {
     "type": "box",
     "layout": "vertical",
@@ -217,11 +217,11 @@ def reply(replyToken, textList):
     "flex": 0
   }
 }
-    flexMsg =[{
+    flexMsg ={
                 "type":"flex",
                 "altText":"test",
                 "contents":flex
-            }]
+            }
     data = json.dumps({"replyToken":replyToken,"messages":flexMsg})
     requests.post(LINE_API, headers=headers, data=data)
     return
