@@ -42,23 +42,23 @@ def getquote(symbol):
                     "percentchange": percent_chg}
     return json.dumps(stock_return)
 
-@app.route('/bot')
+@app.route('/bot', methods=['POST'])
 def bot():
     # ข้อความที่ต้องการส่งกลับ
     replyStack = list()
-
+    if request.method == 'POST':
     # ข้อความที่ได้รับมา
-    msg_in_json = request.get_json()
-    msg_in_string = json.dumps(msg_in_json)
+        msg_in_json = request.get_json()
+        msg_in_string = json.dumps(msg_in_json)
 
     # Token สำหรับตอบกลับ (จำเป็นต้องใช้ในการตอบกลับ)
-    replyToken = msg_in_json["events"][0]['replyToken']
-    txt = msg_in_json["events"][0]['message']
-    txtre = txt['text']
+        replyToken = msg_in_json["events"][0]['replyToken']
+        txt = msg_in_json["events"][0]['message']
+        txtre = txt['text']
 
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไป-มา (แบบ json)
-    replyStack.append(msg_in_string)
-    reply(replyToken, txtre)
+        replyStack.append(msg_in_string)
+        reply(replyToken, txtre)
 
     return 200
 
