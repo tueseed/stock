@@ -55,10 +55,10 @@ def bot():
         replyToken = msg_in_json["events"][0]['replyToken']
         txt = msg_in_json["events"][0]['message']
         txtre = txt['text']
-
+        databack = getquote(txtre)
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไป-มา (แบบ json)
         replyStack.append(msg_in_string)
-        reply(replyToken, txtre)
+        reply(replyToken, databack)
 
     return 'OK'
 
