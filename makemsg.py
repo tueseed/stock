@@ -224,7 +224,7 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ปริมาณซื้อขาย(หุ้น)"}]
+                                 "contents": [{"type": "text", "text": "Volume"}]
                                  },
                                 {"type": "box", "layout": "vertical",
                                  "contents": [{"type": "text", "text": stockdata["volumn"], "align": "end"}]
@@ -237,7 +237,7 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "มูลค่าซื้อขาย(k)"}]
+                                 "contents": [{"type": "text", "text": "Value(k)"}]
                                  },
                                 {"type": "box", "layout": "vertical",
                                  "contents": [{"type": "text", "text": stockdata["vol(k)"], "align": "end"}]
@@ -276,7 +276,7 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาเสนอซื้อ/ปริมาณเสนอซื้อ"}]
+                                 "contents": [{"type": "text", "text": "Bid(price/vol)"}]
                                  },
                                 {"type": "box", "layout": "vertical",
                                  "contents": [{"type": "text", "text": stockdata["bid/vol"], "align": "end"}]
@@ -289,7 +289,7 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาเสนอขาย/ปริมาณเสนอขาย"}]
+                                 "contents": [{"type": "text", "text": "Offer(price/vol)"}]
                                  },
                                 {"type": "box", "layout": "vertical",
                                  "contents": [{"type": "text", "text": stockdata["offer/vol"], "align": "end"}]
