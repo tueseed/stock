@@ -136,11 +136,193 @@ def reply(replyToken, databack):
     flexMsg =[{
                 "type":"flex",
                 "altText":"test",
-                "contents":flex
+                "contents":rendercarousel()
             }]
     data = json.dumps({"replyToken":replyToken,"messages":flexMsg})
     requests.post(LINE_API, headers=headers, data=data)
     return
+def rendercarousel():
+    carouselmsg = {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "TRITN",
+                    "size": "3xl",
+                    "align": "center"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ราคาล่าสุด",
+                    "align": "end",
+                    "size": "sm"
+                  },
+                  {
+                    "type": "text",
+                    "text": "999.99",
+                    "align": "end",
+                    "size": "xl",
+                    "color": "#80ed99"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เปลี่ยนแปลง"
+                  },
+                  {
+                    "type": "text",
+                    "text": "+0.99",
+                    "color": "#80ed99"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "%เปลี่ยนแปลง",
+                    "align": "end"
+                  },
+                  {
+                    "type": "text",
+                    "text": "+0.99",
+                    "align": "end",
+                    "color": "#80ed99"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "TRITN",
+                        "size": "3xl",
+                        "align": "center"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "ราคาล่าสุด",
+                        "align": "end",
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "999.99",
+                        "align": "end",
+                        "size": "xl",
+                        "color": "#80ed99"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "เปลี่ยนแปลง"
+                      },
+                      {
+                        "type": "text",
+                        "text": "+0.99",
+                        "color": "#80ed99"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "%เปลี่ยนแปลง",
+                        "align": "end"
+                      },
+                      {
+                        "type": "text",
+                        "text": "+0.99",
+                        "align": "end",
+                        "color": "#80ed99"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+    return carouselmsg
+
 
 
 if __name__ == '__main__':
