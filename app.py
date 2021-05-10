@@ -2,6 +2,7 @@ from flask import Flask,request
 import json
 from bs4 import BeautifulSoup
 import requests
+from makemsg import makecarousel
 
 # ตรง YOURSECRETKEY ต้องนำมาใส่เองครับจะกล่าวถึงในขั้นตอนต่อๆ ไป
 global LINE_API_KEY
@@ -57,271 +58,28 @@ def bot():
         symbol_from_line = msg_in_json["events"][0]['message']
         txtre = symbol_from_line['text']
         databack = getquote(txtre)
+        makemessage = makecarousel(databack)
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไป-มา (แบบ json)
     #     replyStack.append(msg_in_string)
-        reply(replyToken, databack)
+        reply(replyToken, makemessage)
 
     return 'OK'
 
-def reply(replyToken, databack):
+def reply(replyToken, msg):
     # Method สำหรับตอบกลับข้อความประเภท text กลับครับ เขียนแบบนี้เลยก็ได้ครับ
     LINE_API = 'https://api.line.me/v2/bot/message/reply'
     headers = {'Content-Type': 'application/json; charset=UTF-8','Authorization': LINE_API_KEY}
     # msgs = [{"type":"text","text":str(textList)}]
-    flex = {
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": databack["symbol"],
-        "weight": "bold",
-        "size": "xl"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "margin": "lg",
-        "spacing": "sm",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Place",
-                "color": "#aaaaaa",
-                "size": "sm",
-                "flex": 1
-              },
-              {
-                "type": "text",
-                "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
-                "color": "#666666",
-                "size": "sm",
-                "flex": 5
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Time",
-                "color": "#aaaaaa",
-                "size": "sm",
-                "flex": 1
-              },
-              {
-                "type": "text",
-                "text": "10:00 - 23:00",
-                "color": "#666666",
-                "size": "sm",
-                "flex": 5
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
+
     flexMsg =[{
                 "type":"flex",
                 "altText":"test",
-                "contents":rendercarousel()
+                "contents":msg
             }]
     data = json.dumps({"replyToken":replyToken,"messages":flexMsg})
     requests.post(LINE_API, headers=headers, data=data)
     return
-def rendercarousel():
-    carouselmsg = {
-  "type": "carousel",
-  "contents": [
-    {
-      "type": "bubble",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "TRITN",
-                    "size": "3xl",
-                    "align": "center"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "ราคาล่าสุด",
-                    "align": "end",
-                    "size": "sm"
-                  },
-                  {
-                    "type": "text",
-                    "text": "999.99",
-                    "align": "end",
-                    "size": "xl",
-                    "color": "#80ed99"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "เปลี่ยนแปลง"
-                  },
-                  {
-                    "type": "text",
-                    "text": "+0.99",
-                    "color": "#80ed99"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "%เปลี่ยนแปลง",
-                    "align": "end"
-                  },
-                  {
-                    "type": "text",
-                    "text": "+0.99",
-                    "align": "end",
-                    "color": "#80ed99"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "type": "bubble",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "TRITN",
-                        "size": "3xl",
-                        "align": "center"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "ราคาล่าสุด",
-                        "align": "end",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "999.99",
-                        "align": "end",
-                        "size": "xl",
-                        "color": "#80ed99"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "เปลี่ยนแปลง"
-                      },
-                      {
-                        "type": "text",
-                        "text": "+0.99",
-                        "color": "#80ed99"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "%เปลี่ยนแปลง",
-                        "align": "end"
-                      },
-                      {
-                        "type": "text",
-                        "text": "+0.99",
-                        "align": "end",
-                        "color": "#80ed99"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]
-}
-    return carouselmsg
+
 
 
 
