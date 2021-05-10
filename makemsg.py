@@ -163,12 +163,7 @@ def makecarousel(stockdata):
                                     "contents": [
                                         {
                                             "type": "text",
-                                            "text": "เปลี่ยนแปลง"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": stockdata["pricechange"],
-                                            "color": "#80ed99"
+                                            "text": "ราคาปิดก่อนหน้า"
                                         }
                                     ]
                                 },
@@ -178,14 +173,8 @@ def makecarousel(stockdata):
                                     "contents": [
                                         {
                                             "type": "text",
-                                            "text": "%เปลี่ยนแปลง",
+                                            "text": stockdata["p_close"],
                                             "align": "end"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": stockdata["percentchange"],
-                                            "align": "end",
-                                            "color": "#80ed99"
                                         }
                                     ]
                                 }
