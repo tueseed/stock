@@ -113,7 +113,6 @@ def makecarousel(stockdata):
                                 }
                             ]
                         },
-                        {"type": "separator"},
                         {
                             "type": "box",
                             "layout": "horizontal",
@@ -152,9 +151,11 @@ def makecarousel(stockdata):
                                 }
                             ]
                         },
+                        {"type": "separator","margin": "lg"},
                         {
                             "type": "box",
                             "layout": "horizontal",
+                            "margin": "lg",
                             "contents": [
                                 {
                                     "type": "box",
