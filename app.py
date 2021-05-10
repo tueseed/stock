@@ -39,8 +39,22 @@ def getquote(symbol):
     last_price = h1_list[1].strip()
     price_chg = h1_list[2].strip()
     percent_chg = h1_list[3].strip()
-    stock_return = {"symbol": symbol, "lastupdate": last_update, "lastprice": last_price, "pricechange": price_chg,
-                    "percentchange": percent_chg}
+
+    ########หารานละเอียด###############
+    data_td = soup.find_all('td')
+    td_list = []
+    for data_tds in data_td:
+        obj_td = data_tds.text
+        td_list.append(obj_td)
+
+    stock_return = {
+                    "symbol": symbol, "lastupdate": last_update, "lastprice": last_price,
+                    "pricechange": price_chg,"percentchange": percent_chg, "p_close": td_list[1].strip(),
+                    "open": td_list[3].strip(),"high": td_list[5].strip(),"low": td_list[7].strip(),
+                    "average": td_list[9].strip(),"volumn": td_list[11].strip(),"vol(k)": td_list[13].strip(),
+                    "ceiling": td_list[17].strip(),"floor": td_list[19].strip(),"bid/vol": td_list[21].strip(),
+                    "offer/vol": td_list[23].strip()
+                    }
     # return json.dumps(stock_return)
     return stock_return
 

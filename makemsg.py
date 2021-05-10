@@ -150,6 +150,44 @@ def makecarousel(stockdata):
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "เปลี่ยนแปลง"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": stockdata["pricechange"],
+                                            "color": "#80ed99"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "%เปลี่ยนแปลง",
+                                            "align": "end"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": stockdata["percentchange"],
+                                            "align": "end",
+                                            "color": "#80ed99"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
