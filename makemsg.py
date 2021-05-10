@@ -172,10 +172,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "ราคาเปิด"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["open"], "align": "end"}]
                                  }
                             ]
                         },
@@ -185,10 +185,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "ราคาสูงสุด"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["high"], "align": "end"}]
                                  }
                             ]
                         },
@@ -198,10 +198,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "ราคาต่ำสุด"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["low"], "align": "end"}]
                                  }
                             ]
                         },
@@ -211,10 +211,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "ราคาเฉลี่ย"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["average"], "align": "end"}]
                                  }
                             ]
                         },
@@ -224,10 +224,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "ปริมาณซื้อขาย(หุ้น)"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["volumn"], "align": "end"}]
                                  }
                             ]
                         },
@@ -237,10 +237,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "มูลค่าซื้อขาย(k)"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["vol(k)"], "align": "end"}]
                                  }
                             ]
                         },
@@ -250,10 +250,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "ceiling"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["ceiling"], "align": "end"}]
                                  }
                             ]
                         },
@@ -263,10 +263,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "floor"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["floor"], "align": "end"}]
                                  }
                             ]
                         },
@@ -276,10 +276,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "ราคาเสนอซื้อ/ปริมาณเสนอซื้อ"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["bid/vol"], "align": "end"}]
                                  }
                             ]
                         },
@@ -289,10 +289,10 @@ def makecarousel(stockdata):
                             "margin": "lg",
                             "contents": [
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 "contents": [{"type": "text", "text": "ราคาเสนอขาย/ปริมาณเสนอขาย"}]
                                  },
                                 {"type": "box", "layout": "vertical",
-                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 "contents": [{"type": "text", "text": stockdata["offer/vol"], "align": "end"}]
                                  }
                             ]
                         }
