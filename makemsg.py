@@ -113,6 +113,7 @@ def makecarousel(stockdata):
                                 }
                             ]
                         },
+                        {"type": "separator"},
                         {
                             "type": "box",
                             "layout": "horizontal",
