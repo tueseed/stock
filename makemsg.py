@@ -116,6 +116,7 @@ def makecarousel(stockdata):
                         {
                             "type": "box",
                             "layout": "horizontal",
+                            "margin": "lg",
                             "contents": [
                                 {
                                     "type": "box",
@@ -157,27 +158,142 @@ def makecarousel(stockdata):
                             "layout": "horizontal",
                             "margin": "lg",
                             "contents": [
-                                {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "ราคาปิดก่อนหน้า"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": stockdata["p_close"],
-                                            "align": "end"
-                                        }
-                                    ]
-                                }
+                                            {"type": "box","layout": "vertical",
+                                                "contents": [{"type": "text","text": "ราคาปิดก่อนหน้า"}]
+                                            },
+                                            {"type": "box","layout": "vertical",
+                                                "contents": [{"type": "text","text": stockdata["p_close"],"align": "end"}]
+                                            }
+                                        ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "lg",
+                            "contents": [
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": "ราคาปิดก่อนหน้า"}]
+                                 },
+                                {"type": "box", "layout": "vertical",
+                                 "contents": [{"type": "text", "text": stockdata["p_close"], "align": "end"}]
+                                 }
                             ]
                         }
                     ]
