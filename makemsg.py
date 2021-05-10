@@ -143,7 +143,7 @@ def makecarousel(stockdata):
                                         },
                                         {
                                             "type": "text",
-                                            "text": stock["percentchange"],
+                                            "text": stockdata["percentchange"],
                                             "align": "end",
                                             "color": "#80ed99"
                                         }
